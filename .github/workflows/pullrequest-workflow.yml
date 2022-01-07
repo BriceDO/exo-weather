@@ -50,12 +50,8 @@ jobs:
     needs: test-unitaires
     runs-on: ubuntu-latest
     steps:
-    - name: Installation Artifacts
-      uses: actions/download-artifact@v2
-      with:
-        path: .
     - name: Archive des tests
       uses: actions/upload-artifact@v2
       with:
-        name: Resultat des tests unitaires
-        path: .
+        name: log-test.js
+        path: .test/log-test/log.js
