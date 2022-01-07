@@ -46,7 +46,7 @@ jobs:
         push: true
         tags: bricedo/exo-weather-docker:latest
 # Log des tests unitaires
-name: "Log des tests"
+  log-tests:
     needs: test-unitaires
     runs-on: ubuntu-latest
     steps:
