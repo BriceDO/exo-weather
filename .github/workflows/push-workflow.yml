@@ -1,0 +1,15 @@
+name: Push Workflow
+on:
+  push:
+jobs:
+  test-unitaires:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperation du repo
+        uses: actions/checkout@v2
+      - name: Recuperation de Node.js
+        uses: actions/setup-node@v2
+      - name: Installation dépendances
+        run: npm install
+      - name: Run les test
+        run: npm test

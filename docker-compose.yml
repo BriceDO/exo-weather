@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  monapp:
+    build: .
+    container_name: exo-docker
