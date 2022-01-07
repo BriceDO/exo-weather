@@ -8,5 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v2
+      - name: Installation dépendances
+        run: npm install
       - name: Run les test
         run: npm test
