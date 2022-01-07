@@ -20,6 +20,12 @@ jobs:
 
       - name: Run les test
         run: npm test
+
+      - name: Recuperation des tests
+        uses: actions/upload-artifact@v2
+        with: 
+          name: test-unitaire
+          path: ./reports/awesome-reports
 # Job Push de l'image sur le docker hub
   push-image:
     runs-on: ubuntu-latest
@@ -39,19 +45,10 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+
     - name: Build et push mon image docker
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
         tags: bricedo/exo-weather-docker:latest
-# Log des tests unitaires
-  log-tests:
-    needs: test-unitaires
-    runs-on: ubuntu-latest
-    steps:
-    - name: Archive des tests
-      uses: actions/upload-artifact@v2
-      with:
-        name: log-test.js
-        path: .test/log-test/log.js
