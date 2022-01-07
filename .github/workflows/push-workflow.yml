@@ -5,8 +5,6 @@ jobs:
   test-unitaires:
   runs-on: ubuntu-latest
   steps:
-    - name: recuperation du repo
-      uses: actions/checkout@v2
     - name: recuperation de node
       uses: actions/setup-node@v2
     - name: Run les test
