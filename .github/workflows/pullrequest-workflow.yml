@@ -22,7 +22,7 @@ jobs:
         run: npm test
 # 2eme job, build de l'image docker
   creation-image-docker:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     needs: test-unitaires
     steps:
       - name: Recuperation du repo
@@ -38,7 +38,7 @@ jobs:
         run: npm run build
 # 3eme job, push de l'image sur le docker hub
   push-image:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     needs: creation-image-docker
     steps:
     - name: Recuperation du repo
