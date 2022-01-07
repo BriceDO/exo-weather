@@ -39,6 +39,7 @@ jobs:
 # Job Push de l'image sur le docker hub
   push-image:
     runs-on: ubuntu-latest
+    needs: test-unitaires
     steps:
     - name: Recuperation du repo
       uses: actions/checkout@v2
