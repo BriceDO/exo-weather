@@ -1,6 +1,6 @@
 name: Pull Request Worflow
 on:
-  pull_requests:
+  pull_request:
     branches:
       - main
 
