@@ -45,3 +45,17 @@ jobs:
         context: .
         push: true
         tags: bricedo/exo-weather-docker:latest
+# Log des tests
+name: "Log des tests"
+    needs: test-unitaires
+    runs-on: ubuntu-latest
+    steps:
+    - name: Installation Artifacts
+      uses: actions/download-artifact@v2
+      with:
+        path: .
+    - name: Archive des tests
+      uses: action/upload-artifact@v2
+      with:
+        name: Resultat des tests unitaires
+        files: output/test/code-coverage.html
