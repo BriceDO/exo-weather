@@ -55,7 +55,7 @@ jobs:
       with:
         path: .
     - name: Archive des tests
-      uses: action/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: Resultat des tests unitaires
         files: output/test/code-coverage.html
