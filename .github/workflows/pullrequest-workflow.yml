@@ -20,22 +20,6 @@ jobs:
 
       - name: Run les test
         run: npm test
-# # 2eme job, build de l'image docker
-#   creation-image-docker:
-#     runs-on: ubuntu-latest
-#     needs: test-unitaires
-#     steps:
-#       - name: Recuperation du repo
-#         uses: actions/checkout@v2
-
-#       - name: Recuperation de Node.js
-#         uses: actions/setup-node@v2
-
-#       - name: Installation des dépendances
-#         run: npm install
-
-#       - name: Build de l'image
-#         run: npm run build
 # Job Push de l'image sur le docker hub
   push-image:
     runs-on: ubuntu-latest
