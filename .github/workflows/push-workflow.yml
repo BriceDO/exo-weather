@@ -5,8 +5,9 @@ jobs:
   test-unitaires:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
+      - name: Recuperation du repo
+        uses: actions/checkout@v2
+      - name: Recuperation de Node.js
         uses: actions/setup-node@v2
       - name: Installation dépendances
         run: npm install
