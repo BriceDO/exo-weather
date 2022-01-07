@@ -8,6 +8,6 @@ jobs:
     - name: recuperation du repo
       uses: actions/checkout@v2
     - name: recuperation de node
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
     - name: Run les test
       - run: npm test
